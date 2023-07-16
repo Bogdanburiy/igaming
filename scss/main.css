@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap");
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+* ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+* a {
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+}
+
+.grad-btn, .intro-heading a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 30px;
+  color: #fff;
+  text-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.25);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  border-radius: 10px;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+.grad-btn span, .intro-heading a span {
+  position: relative;
+  z-index: 3;
+}
+.grad-btn::before, .intro-heading a::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(281.59% 122.01% at 96.89% 70.83%, #DD608C 0%, #CA39BA 100%);
+  box-shadow: 0px 10px 30px 0px rgba(234, 113, 197, 0.5), 0px 0px 5px 0px #FFACE4 inset, 0px -1px 8px 0px #9375B6 inset;
+}
+.grad-btn::after, .intro-heading a::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(180deg, rgba(254, 200, 241, 0.9) 0%, rgba(237, 146, 215, 0) 40.39%), radial-gradient(281.59% 122.01% at 96.89% 70.83%, #F69EA3 0%, #E970C4 100%);
+  background-blend-mode: overlay, normal;
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.3s ease-out;
+}
+.grad-btn:hover, .intro-heading a:hover {
+  color: #fff;
+}
+.grad-btn:hover::after, .intro-heading a:hover::after {
+  opacity: 1;
+  z-index: 2;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  padding: 15px 0;
+  z-index: 10;
+}
+.header-logo a {
+  display: flex;
+  max-width: 180px;
+  width: 100%;
+  height: 60px;
+}
+.header-logo a img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  height: 100%;
+}
+.header-menu {
+  display: flex;
+  height: 100%;
+}
+.header-menu ul {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.header-menu ul li {
+  margin-right: 50px;
+}
+.header-menu ul li:last-child {
+  margin-right: 0;
+}
+.header-menu ul li a {
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  text-decoration: none;
+}
+.header-button {
+  margin-left: 30px;
+}
+
+.intro {
+  padding: 200px 0 100px 0;
+  background-image: url(../img/main-screen-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.intro-heading h1 {
+  margin: 0;
+  margin-bottom: 30px;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 700;
+  background: linear-gradient(45deg, rgb(204, 81, 214) 0%, rgb(90, 104, 232) 50%, rgb(225, 177, 255) 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.intro-heading p {
+  margin-bottom: 30px;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  opacity: 0.6;
+}
+.intro-heading a {
+  font-size: 24px;
+}
+.intro-image {
+  position: relative;
+}
+.intro-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.advantages {
+  padding: 45px 0;
+  background: linear-gradient(142deg, #171A57 0%, rgba(23, 26, 87, 0.9) 99.99%, rgba(23, 26, 87, 0) 100%);
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
+  border-top: 1px solid #1E1241;
+}
+.advantages .strong {
+  display: block;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -0.935px;
+  text-transform: capitalize;
+}
+.advantages p {
+  margin: 0;
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.course {
+  padding: 100px 0;
+}
+.course-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.course-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.course-content__subtitle {
+  margin-bottom: 10px;
+  color: #5956E9;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.course-content h2 {
+  margin-bottom: 15px;
+  color: #191919;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  text-transform: capitalize;
+}
+.course-content p {
+  margin-bottom: 20px;
+  color: #191919;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  opacity: 0.5;
+}
+.course-content p:last-child {
+  margin-bottom: 0;
+}/*# sourceMappingURL=main.css.map */

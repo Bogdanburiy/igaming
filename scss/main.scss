@@ -1,0 +1,246 @@
+// Font
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+
+// Variables
+$main-white: #fff;
+$main-blue: #5956E9;
+$main-dark: #191919;
+
+body {
+    font-family: 'DM Sans', sans-serif;
+}
+
+* ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+* a {
+    text-decoration: none;
+    transition: all .3s ease-out;
+}
+
+// Main btns
+.grad-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 10px 30px;
+    color: $main-white;
+    text-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.25);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    border-radius: 10px;
+    text-transform: uppercase;
+    overflow: hidden;
+    span {
+        position: relative;
+        z-index: 3;
+    }
+    &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background: radial-gradient(281.59% 122.01% at 96.89% 70.83%, #DD608C 0%, #CA39BA 100%);
+        box-shadow: 0px 10px 30px 0px rgba(234, 113, 197, 0.50), 0px 0px 5px 0px #FFACE4 inset, 0px -1px 8px 0px #9375B6 inset;
+    }
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background: linear-gradient(180deg, rgba(254, 200, 241, 0.90) 0%, rgba(237, 146, 215, 0.00) 40.39%), radial-gradient(281.59% 122.01% at 96.89% 70.83%, #F69EA3 0%, #E970C4 100%);
+        background-blend-mode: overlay, normal;
+        opacity: 0;
+        z-index: -1;
+        transition: all .3s ease-out;
+    }
+    &:hover {
+        color: $main-white;
+        &::after {
+            opacity: 1;
+            z-index: 2;
+        }
+    }
+}
+
+// Main styles
+.header {
+    position: fixed;
+    width: 100%;
+    padding: 15px 0;
+    z-index: 10;
+    &-logo {
+        a {
+            display: flex;
+            max-width: 180px;
+            width: 100%;
+            height: 60px;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+    &-right {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        height: 100%;
+    }
+    &-menu {
+        display: flex;
+        height: 100%;
+        ul {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            li {
+                margin-right: 50px;
+                &:last-child {
+                    margin-right: 0;
+                }
+                a {
+                    color: $main-white;
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 150%;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    &-button {
+        margin-left: 30px;
+    }
+}
+
+.intro {
+    padding: 200px 0 100px 0;
+    background-image: url(../img/main-screen-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &-heading {
+        h1 {
+            margin: 0;
+            margin-bottom: 30px;
+            font-size: 80px;
+            font-style: normal;
+            font-weight: 700;
+            background: linear-gradient(45deg, rgba(204,81,214,1) 0%, rgba(90,104,232,1) 50%, rgba(225,177,255,1) 100%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        p {
+            margin-bottom: 30px;
+            color: $main-white;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            opacity: 0.6;
+        }
+        a {
+            @extend .grad-btn;
+            font-size: 24px;
+        }
+    }
+    &-image {
+        position: relative;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}
+
+.advantages {
+    padding: 45px 0;
+    background: linear-gradient(142deg, #171A57 0%, rgba(23, 26, 87, 0.9) 99.99%, rgba(23, 26, 87, 0.00) 100%);
+    backdrop-filter: blur(25px);
+    border-top: 1px solid #1E1241;
+    .strong {
+        display: block;
+        margin-bottom: 10px;
+        color: $main-white;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 100%;
+        letter-spacing: -0.935px;
+        text-transform: capitalize;
+    }
+    p {
+        margin: 0;
+        color: $main-white;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 32px;
+    }
+}
+
+.course {
+    padding: 100px 0;
+    &-image {
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        &__subtitle {
+            margin-bottom: 10px;
+            color: $main-blue;
+            font-size: 26px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: capitalize;
+        }
+        h2 {
+            margin-bottom: 15px;
+            color: $main-dark;
+            font-size: 44px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 120%;
+            text-transform: capitalize;
+        }
+        p {
+            margin-bottom: 20px;
+            color: $main-dark;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 26px;
+            opacity: 0.5;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
