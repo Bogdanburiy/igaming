@@ -14,7 +14,18 @@ body {
   transition: all 0.3s ease-out;
 }
 
-.grad-btn, .intro-heading a {
+.section-title, .project-heading h2, .lessons-heading h2, .program-heading h2, .course-content h2 {
+  margin: 0;
+  margin-bottom: 30px;
+  color: #191919;
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  text-transform: capitalize;
+}
+
+.grad-btn, .cooperation a, .program-card a, .intro-heading a {
   position: relative;
   display: flex;
   align-items: center;
@@ -32,11 +43,11 @@ body {
   text-transform: uppercase;
   overflow: hidden;
 }
-.grad-btn span, .intro-heading a span {
+.grad-btn span, .cooperation a span, .program-card a span, .intro-heading a span {
   position: relative;
   z-index: 3;
 }
-.grad-btn::before, .intro-heading a::before {
+.grad-btn::before, .cooperation a::before, .program-card a::before, .intro-heading a::before {
   content: "";
   display: block;
   width: 100%;
@@ -48,7 +59,7 @@ body {
   background: radial-gradient(281.59% 122.01% at 96.89% 70.83%, #DD608C 0%, #CA39BA 100%);
   box-shadow: 0px 10px 30px 0px rgba(234, 113, 197, 0.5), 0px 0px 5px 0px #FFACE4 inset, 0px -1px 8px 0px #9375B6 inset;
 }
-.grad-btn::after, .intro-heading a::after {
+.grad-btn::after, .cooperation a::after, .program-card a::after, .intro-heading a::after {
   content: "";
   display: block;
   width: 100%;
@@ -63,12 +74,33 @@ body {
   z-index: -1;
   transition: all 0.3s ease-out;
 }
-.grad-btn:hover, .intro-heading a:hover {
+.grad-btn:hover, .cooperation a:hover, .program-card a:hover, .intro-heading a:hover {
   color: #fff;
 }
-.grad-btn:hover::after, .intro-heading a:hover::after {
+.grad-btn:hover::after, .cooperation a:hover::after, .program-card a:hover::after, .intro-heading a:hover::after {
   opacity: 1;
   z-index: 2;
+}
+
+.blue-btn, .signup-form__field form input.blue-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 25px;
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(254, 200, 241, 0.9) 0%, rgba(237, 146, 215, 0) 40.39%), radial-gradient(137.13% 253.39% at 76.68% 66.67%, #602EA6 0%, #C977D6 100%);
+  background-blend-mode: overlay, normal;
+  box-shadow: 0px 0px 5px 0px #FFACE4 inset, 0px -1px 8px 0px #9375B6 inset;
+}
+.blue-btn:hover, .signup-form__field form input.blue-btn:hover {
+  color: #fff;
+  opacity: 0.8;
 }
 
 .header {
@@ -76,6 +108,15 @@ body {
   width: 100%;
   padding: 15px 0;
   z-index: 10;
+}
+.header.sticky-hidden {
+  transition: all 0.2s ease-out;
+  opacity: 0;
+}
+.header.sticky-show {
+  background-color: #191d3e;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  opacity: 1;
 }
 .header-logo a {
   display: flex;
@@ -117,6 +158,9 @@ body {
   font-weight: 500;
   line-height: 150%;
   text-decoration: none;
+}
+.header-menu ul li a:hover {
+  color: #DD608C;
 }
 .header-button {
   margin-left: 30px;
@@ -217,10 +261,6 @@ body {
   margin-bottom: 15px;
   color: #191919;
   font-size: 44px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 120%;
-  text-transform: capitalize;
 }
 .course-content p {
   margin-bottom: 20px;
@@ -233,4 +273,431 @@ body {
 }
 .course-content p:last-child {
   margin-bottom: 0;
+}
+
+.program {
+  position: relative;
+  padding: 100px 0;
+  background-image: url(../img/program-bg.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.program-heading {
+  margin-bottom: 100px;
+}
+.program-heading span {
+  display: block;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+  text-align: center;
+  opacity: 0.7;
+}
+.program-heading h2 {
+  margin: 0;
+  color: #fff;
+  text-align: center;
+}
+.program-card {
+  position: relative;
+  padding: 30px;
+  border-radius: 20px;
+  background: linear-gradient(114deg, rgba(27, 51, 81, 0.3) 15.8%, rgba(155, 97, 149, 0.3) 92.73%);
+  box-shadow: 0px 40px 40px 0px rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
+}
+.program-card .strong {
+  margin-bottom: 30px;
+  color: #fff;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  text-align: center;
+}
+.program-card__list {
+  position: relative;
+}
+.program-card__list ul li {
+  position: relative;
+  margin-bottom: 20px;
+  padding: 20px 20px 20px 70px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  border-radius: 0px 20px 20px 0px;
+  background: linear-gradient(270deg, #4A4664 56.01%, #242E4F 90.73%);
+}
+.program-card__list ul li::before {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  content: "";
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(180deg, #C5CCDE 0%, rgba(209, 219, 230, 0) 100%);
+  filter: drop-shadow(0px 10px 20px rgba(50, 83, 140, 0.25));
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
+  border-radius: 50%;
+}
+.program-card__list ul li::after {
+  content: "";
+  display: block;
+  width: calc(100% + 1px);
+  height: calc(100% + 1px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(45deg, #282f52 40%, #36EBF2 60%, #6D6B7F 100%);
+  border-radius: 0px 20px 20px 0px;
+  z-index: -1;
+}
+.program-card__list ul li:last-child {
+  margin-bottom: 0;
+}
+.program-card__list ul li small {
+  display: block;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px;
+  mix-blend-mode: overlay;
+}
+.program-card__price {
+  margin: 30px 0;
+  text-align: center;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  background: linear-gradient(155deg, #8C89EC 0%, #E1B1FF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.program-card a {
+  margin: 0 auto;
+  font-size: 24px;
+}
+
+.lessons {
+  padding: 100px 0;
+  background: #F0EDF3;
+}
+.lessons-heading {
+  margin-bottom: 80px;
+}
+.lessons-heading span {
+  display: block;
+  margin-bottom: 10px;
+  color: #5956E9;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+  text-align: center;
+}
+.lessons-heading h2 {
+  margin: 0;
+  text-align: center;
+}
+.lessons-card {
+  position: relative;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+.lessons-card__date {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border-radius: 0px 10px 0px 10px;
+  background: #5956E9;
+}
+.lessons-card i.icon {
+  display: flex;
+  margin-bottom: 25px;
+}
+.lessons-card .strong {
+  margin-bottom: 15px;
+  color: #191919;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.lessons-card p {
+  margin-bottom: 20px;
+  color: #191919;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  opacity: 0.6;
+}
+
+.project {
+  position: relative;
+  padding: 100px 0 180px 0;
+  overflow: hidden;
+}
+.project-heading {
+  max-width: 550px;
+  width: 100%;
+}
+.project-heading span {
+  display: block;
+  margin-bottom: 15px;
+  color: #5956E9;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.project-heading p {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  color: rgba(25, 25, 25, 0.6);
+}
+.project-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 762px;
+  width: 100%;
+}
+.project-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.cooperation {
+  padding: 100px 0;
+  background-color: #F0EDF3;
+}
+.cooperation-heading span {
+  display: block;
+  margin-bottom: 10px;
+  color: #5956E9;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+  text-align: center;
+}
+.cooperation-heading h2 {
+  margin: 0;
+  text-align: center;
+}
+.cooperation-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0 60px 0;
+}
+.cooperation-logo img {
+  max-width: 400px;
+  width: 100%;
+}
+.cooperation p {
+  margin: 0;
+  margin-bottom: 50px;
+  color: #191919;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+  opacity: 0.6;
+  text-align: center;
+}
+.cooperation a {
+  margin: 0 auto;
+}
+
+.signup {
+  position: relative;
+  padding: 100px 0;
+  background-image: url(../img/signup-bg.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.signup-form {
+  position: relative;
+  display: flex;
+  height: 585px;
+  background-color: #1E1240;
+  box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.5), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  overflow: hidden;
+}
+.signup-form__image {
+  position: relative;
+  flex: 0 0 auto;
+  width: 50%;
+  max-width: 100%;
+  padding: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  box-shadow: 10px 0px 20px #1B1039;
+}
+.signup-form__image .strong {
+  color: #fff;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+}
+.signup-form__image img {
+  width: 100%;
+  height: 100%;
+}
+.signup-form__field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 50%;
+  max-width: 100%;
+  padding: 80px;
+}
+.signup-form__field h2 {
+  margin-bottom: 30px;
+  color: #fff;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.signup-form__field p {
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+}
+.signup-form__field form .form-group {
+  margin-bottom: 25px;
+}
+.signup-form__field form .form-group label {
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+}
+.signup-form__field form .form-group__border {
+  position: relative;
+}
+.signup-form__field form .form-group__border::after {
+  content: "";
+  display: block;
+  width: calc(100% + 1px);
+  height: calc(100% + 1px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(180deg, rgb(58, 35, 125) 0%, rgb(141, 123, 192) 100%);
+  border-radius: 10px;
+  z-index: 1;
+}
+.signup-form__field form .form-group input {
+  position: relative;
+  padding: 15px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgb(37, 24, 68) 0%, rgb(71, 61, 97) 100%);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  z-index: 2;
+}
+.signup-form__field form .form-group input:focus {
+  outline: none;
+  box-shadow: none;
+}
+.signup-form__field form .form-group input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+}
+.signup-form__field form .form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+}
+.signup-form__field form input.blue-btn {
+  width: 100%;
+  margin-top: 50px;
+  box-shadow: 0px -5px 40px #9755C0;
+  transition: all 0.3s ease-out;
+}
+
+.footer {
+  padding: 25px 0;
+  background-color: #5956E9;
+}
+.footer-copyright {
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+}
+.footer-menu ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.footer-menu ul li {
+  margin-right: 15px;
+}
+.footer-menu ul li:last-child {
+  margin-right: 0;
+}
+.footer-menu ul li a {
+  color: #fff;
+  font-size: 18px;
+}
+.footer-menu ul li a:hover {
+  color: #DD608C;
 }/*# sourceMappingURL=main.css.map */
