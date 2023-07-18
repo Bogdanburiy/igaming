@@ -25,3 +25,21 @@ $(function () {
         lastScrollTop = windowTop;
     });
 });
+
+// Open overlay menu by click on hamburger menu
+$('.header-hamburger').on('click', function() {
+    $('.header-modal').toggleClass('show');
+});
+
+$('.header-modal__close').on('click', function() {
+    $('.header-modal').removeClass('show');
+});
+
+// Project carousel
+$('.project-carousel').slick({
+    centerMode: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+});

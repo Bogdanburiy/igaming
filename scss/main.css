@@ -165,6 +165,85 @@ body {
 .header-button {
   margin-left: 30px;
 }
+.header-hamburger {
+  position: relative;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 50px;
+  height: 50px;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+.header-hamburger span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.3s ease-out;
+}
+.header-hamburger span:nth-of-type(1) {
+  top: calc(50% - 5px);
+}
+.header-hamburger span:nth-of-type(2) {
+  top: calc(50% + 5px);
+}
+
+.header-modal {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  padding: 60px;
+  background-color: #111;
+  z-index: 15;
+  transition: all 0.5s ease-out;
+  opacity: 1;
+}
+.header-modal.show {
+  right: 0;
+  opacity: 1;
+}
+.header-modal__close {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all 0.3s ease-out;
+}
+.header-modal__close svg {
+  transform: scale(0.3);
+}
+.header-modal__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.header-modal__info-nav ul li {
+  margin-bottom: 20px;
+}
+.header-modal__info-nav ul li a {
+  color: #f5f5f5;
+  font-size: 20px;
+  font-weight: 400;
+}
+.header-modal__info-copyright {
+  color: #c4c7cc;
+  font-size: 14px;
+  font-weight: 400;
+}
 
 .intro {
   padding: 200px 0 100px 0;
@@ -484,6 +563,25 @@ body {
   line-height: 140%;
   color: rgba(25, 25, 25, 0.6);
 }
+.project-carousel {
+  display: none;
+}
+.project-carousel.slick-slider .slick-list {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+.project-carousel__item {
+  height: 260px;
+  margin: 0 5px;
+}
+.project-carousel__item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
 .project-image {
   position: absolute;
   top: 0;
@@ -700,4 +798,330 @@ body {
 }
 .footer-menu ul li a:hover {
   color: #DD608C;
+}
+
+@media only screen and (max-width: 1400px) {
+  .header-menu ul li {
+    margin-right: 25px;
+  }
+  .intro-heading h1 {
+    font-size: 70px;
+  }
+  .course-content h2 {
+    font-size: 40px;
+  }
+  .project-image {
+    max-width: 670px;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: left;
+       object-position: left;
+  }
+  .project-heading {
+    max-width: 450px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .section-title, .course-content h2, .program-heading h2, .lessons-heading h2, .project-heading h2 {
+    font-size: 46px;
+  }
+  .header-menu ul li a {
+    font-size: 16px;
+    line-height: 120%;
+  }
+  .header-menu ul li {
+    margin-right: 15px;
+  }
+  .intro-heading {
+    padding-right: 30px;
+  }
+  .intro-heading h1 {
+    font-size: 60px;
+  }
+  .intro-image {
+    display: flex;
+    height: 100%;
+  }
+  .advantages .strong {
+    font-size: 40px;
+  }
+  .course-content__subtitle {
+    font-size: 21px;
+  }
+  .course-content h2 {
+    font-size: 32px;
+  }
+  .course-image {
+    display: flex;
+    height: 100%;
+  }
+  .program-card__list ul li {
+    font-size: 15px;
+  }
+  .lessons-card {
+    padding: 30px;
+  }
+  .lessons-card i.icon img {
+    width: 70px;
+    height: 70px;
+  }
+  .lessons-card .strong {
+    font-size: 24px;
+  }
+  .lessons-card p {
+    font-size: 16px;
+    line-height: 130%;
+  }
+  .project {
+    padding: 100px 0 100px 0;
+  }
+  .project-image {
+    max-width: 500px;
+  }
+  .program-card__list ul li {
+    background: linear-gradient(270deg, #4A4664 30%, #242E4F 90.73%);
+  }
+  .program-card.second .program-card__list ul li {
+    background: linear-gradient(270deg, #4A4664 30%, #222b48 90.73%);
+  }
+}
+@media only screen and (max-width: 992px) {
+  .section-title, .course-content h2, .program-heading h2, .lessons-heading h2, .project-heading h2 {
+    font-size: 36px;
+  }
+  .header-logo a {
+    height: 50px;
+  }
+  .header-button a {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  .header-menu {
+    display: none;
+  }
+  .header-hamburger {
+    display: flex;
+  }
+  .intro {
+    padding: 140px 0 50px 0;
+  }
+  .intro-heading h1 {
+    font-size: 50px;
+  }
+  .intro-heading p {
+    font-size: 18px;
+  }
+  .intro-heading a {
+    font-size: 18px;
+  }
+  .intro-image {
+    margin-top: 30px;
+  }
+  .advantages .strong {
+    font-size: 34px;
+  }
+  .advantages p {
+    font-size: 16px;
+  }
+  .course-image {
+    display: none;
+  }
+  .course {
+    padding: 50px 0;
+  }
+  .program {
+    padding: 50px 0;
+  }
+  .program-heading {
+    margin-bottom: 30px;
+  }
+  .program-heading span {
+    font-size: 18px;
+  }
+  .program-card {
+    padding: 20px;
+  }
+  .program-card .strong {
+    font-size: 24px;
+  }
+  .program-card__list ul li {
+    padding: 20px;
+  }
+  .program-card__list ul li::before {
+    display: none;
+  }
+  .program-card__price {
+    margin: 20px 0;
+    font-size: 34px;
+  }
+  .program-card a {
+    font-size: 18px;
+  }
+  .program-card.second .program-card__list ul li,
+  .program-card .program-card__list ul li {
+    background: linear-gradient(270deg, #4d4968 30%, #293250 90.73%);
+    border-radius: 20px;
+  }
+  .program-card__list ul li::after {
+    border-radius: 20px;
+  }
+  .lessons {
+    padding: 50px 0;
+  }
+  .lessons-heading span {
+    font-size: 18px;
+  }
+  .lessons-heading {
+    margin-bottom: 30px;
+  }
+  .lessons-card {
+    padding: 15px;
+  }
+  .lessons-card i.icon {
+    margin-bottom: 15px;
+  }
+  .lessons-card i.icon img {
+    width: 50px;
+    height: 50px;
+  }
+  .lessons-card .strong {
+    font-size: 18px;
+  }
+  .lessons-card__date {
+    font-size: 12px;
+  }
+  .lessons-card .blue-btn, .lessons-card .signup-form__field form input.blue-btn, .signup-form__field form .lessons-card input.blue-btn {
+    font-size: 16px;
+  }
+  .project-heading span {
+    font-size: 18px;
+  }
+  .project-heading p {
+    font-size: 16px;
+  }
+  .project {
+    padding: 50px 0;
+  }
+  .project-heading {
+    max-width: 320px;
+  }
+  .project-image {
+    max-width: 400px;
+  }
+  .cooperation {
+    padding: 50px 0;
+  }
+  .cooperation-heading span {
+    font-size: 18px;
+  }
+  .cooperation-logo img {
+    max-width: 250px;
+  }
+  .cooperation-logo {
+    margin: 30px 0;
+  }
+  .cooperation p {
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .signup {
+    padding: 50px 0;
+  }
+  .signup-form__image .strong {
+    font-size: 24px;
+  }
+  .signup-form__field {
+    padding: 30px;
+  }
+  .signup-form__field h2 {
+    margin-bottom: 15px;
+  }
+  .footer-copyright {
+    font-size: 16px;
+  }
+  .footer-menu ul li a {
+    font-size: 16px;
+  }
+  .footer-menu ul li {
+    margin-right: 5px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .intro {
+    padding: 100px 0 50px 0;
+  }
+  .intro-heading {
+    padding-right: 0;
+  }
+  .intro-heading h1 {
+    font-size: 36px;
+  }
+  .program-card.first {
+    margin-bottom: 30px;
+  }
+  .lessons-card {
+    margin-bottom: 30px;
+  }
+  .project-heading {
+    max-width: 100%;
+  }
+  .project-image {
+    display: none;
+  }
+  .project-carousel {
+    display: block;
+  }
+  .signup-form {
+    height: auto;
+    flex-direction: column;
+  }
+  .signup-form__image,
+  .signup-form__field {
+    width: 100%;
+  }
+  .signup-form__field p {
+    font-size: 16px;
+  }
+  .signup-form__image {
+    display: none;
+    height: 300px;
+  }
+  .footer-copyright {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .footer-menu ul {
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .section-title, .course-content h2, .program-heading h2, .lessons-heading h2, .project-heading h2 {
+    font-size: 28px;
+  }
+  .header-button {
+    display: none;
+  }
+  .intro-heading h1 {
+    font-size: 28px;
+  }
+  .intro-heading p {
+    font-size: 16px;
+  }
+  .advantages .strong {
+    font-size: 28px;
+  }
+  .project-carousel__item {
+    height: 150px;
+  }
+  .cooperation-logo img {
+    max-width: 180px;
+  }
+  .footer-menu ul {
+    flex-wrap: wrap;
+  }
+  .header-modal {
+    padding: 30px;
+  }
 }/*# sourceMappingURL=main.css.map */
