@@ -43,3 +43,10 @@ $('.project-carousel').slick({
     autoplay: true,
     autoplaySpeed: 2000,
 });
+
+// AOS Init
+window.onload = function() {
+    AOS.init({
+        once: true,
+    });
+};
