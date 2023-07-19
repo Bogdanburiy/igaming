@@ -3,6 +3,14 @@ body {
   font-family: "DM Sans", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 * ul {
   margin: 0;
   padding: 0;
@@ -12,6 +20,10 @@ body {
 * a {
   text-decoration: none;
   transition: all 0.3s ease-out;
+}
+
+.section-overflow {
+  overflow: hidden;
 }
 
 .section-title, .project-heading h2, .lessons-heading h2, .program-heading h2, .course-content h2 {

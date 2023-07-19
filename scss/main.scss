@@ -11,6 +11,12 @@ body {
     font-family: 'DM Sans', sans-serif;
 }
 
+html { scroll-behavior: smooth; }
+
+* {
+    box-sizing: border-box;
+}
+
 * ul {
     margin: 0;
     padding: 0;
@@ -20,6 +26,10 @@ body {
 * a {
     text-decoration: none;
     transition: all .3s ease-out;
+}
+
+.section-overflow {
+    overflow: hidden;
 }
 
 // Headings

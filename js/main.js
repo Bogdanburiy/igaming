@@ -50,3 +50,16 @@ window.onload = function() {
         once: true,
     });
 };
+
+// Scroll to section
+$('a.anchor-link[href^="#"]').click(function(event) {
+    var id = $(this).attr("href");
+    var offset = 0;
+    var target = $(id).offset().top - offset;
+    $('html, body').animate({scrollTop:target}, 400);
+    event.preventDefault();
+});
+
+$('.header-modal__info-nav ul li a').click(function() {
+    $('.header-modal').removeClass('show');
+});
